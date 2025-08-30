@@ -671,7 +671,7 @@
         const title = el('h3', 'font-semibold'); title.textContent = x.role;
         const ul = el('ul', 'mt-2 list-disc pl-5 space-y-1 text-sm');
         (x.bullets || []).forEach(b => { const li = el('li'); li.textContent = b; ul.appendChild(li); });
-        card.append(title, meta, sum, ul); sum.appendChild(card);
+        card.append(title, ul); sum.appendChild(card);
       });
 
       // Projects
