@@ -641,8 +641,9 @@
       (profile.education || []).forEach(e => {
         const item = el('div');
         const title = el('div', 'font-medium'); title.textContent = `${e.school}`;
-        const sub = el('div', 'text-sm text-slate-600 dark:text-slate-300'); sub.textContent = `${e.degree || ''} ${e.period ? ' • ' + e.period : ''}`;
-        item.appendChild(title); item.appendChild(sub); edu.appendChild(item);
+        const sub = el('div', 'text-sm text-slate-600 dark:text-slate-300'); sub.textContent = `${e.degree || ''}`;
+        const meta = el('div', 'text-xs text-slate-500 mt-0.5'); meta.textContent = e.period || '';
+        item.appendChild(title); item.appendChild(sub); item.appendChild(meta); edu.appendChild(item);
       });
 
       // Achievements
