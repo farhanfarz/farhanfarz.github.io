@@ -664,14 +664,14 @@
       });
 
       // Experience
-      const sum = $('#summary');
-      sum.innerHTML = '';
-      (profile.summary || []).forEach(x => {
+      const summ = $('#summary');
+      summ.innerHTML = '';
+      (profile.summary || []).forEach(s => {
         const card = el('article', 'rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 p-4');
-        const title = el('h3', 'font-semibold'); title.textContent = x.role;
+        const title = el('h3', 'font-semibold'); title.textContent = s.role;
         const ul = el('ul', 'mt-2 list-disc pl-5 space-y-1 text-sm');
-        (x.bullets || []).forEach(b => { const li = el('li'); li.textContent = b; ul.appendChild(li); });
-        card.append(title, ul); sum.appendChild(card);
+        (s.bullets || []).forEach(b => { const li = el('li'); li.textContent = b; ul.appendChild(li); });
+        card.append(title, ul); summ.appendChild(card);
       });
 
       // Projects
